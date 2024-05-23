@@ -86,6 +86,7 @@ def main(topic, hl, gl, ceid, num=10):
     print(f"Generated Bullet List for topic {topic}:")
     print(bullet_list)
 
+
 if __name__ == "__main__":
     # Check if we have the required parameters
     if len(sys.argv) < 3:
@@ -93,6 +94,7 @@ if __name__ == "__main__":
         print(f"Requires two parameters: topic number-of-feeds-to-process")
         print("")
         print(f"Example: main.py celtics 3")
+        print(f"Example: main.py \"boston celtics\" 3")
     else:
         # Download NLTK data files (only need to be run once)
         nltk.download('punkt')
