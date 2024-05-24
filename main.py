@@ -71,7 +71,7 @@ def generate_bullet_list(all_text):
     return '\n'.join(bullet_list)
 
 
-def main(topic, hl, gl, ceid, num=10):
+def main(topic, hl="en-US", gl="US", ceid="US:en", num=10):
     encoded_topic = quote(topic)
     rss_url = f"https://news.google.com/rss/search?q={encoded_topic}&hl={hl}&gl={gl}&ceid={ceid}&num={num}"
     feed = fetch_rss_feed(rss_url)
@@ -102,4 +102,4 @@ if __name__ == "__main__":
         nltk.download('averaged_perceptron_tagger')
         nltk.download('maxent_ne_chunker')
         nltk.download('words')
-        main(sys.argv[1], "en-AU", "AU", "AU:en", int(sys.argv[2]))
+        main(topic=sys.argv[1], num=int(sys.argv[2]))
